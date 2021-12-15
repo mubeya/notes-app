@@ -1,0 +1,69 @@
+.noteDate {
+  display: flex;
+  justify-content: space-between;
+  font-size: 12px;
+  color: #ffffff80;
+}
+
+.noteArea {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  width: 296px !important;
+  margin: 0 0.75rem 1rem 0.75rem;
+  border-radius: 5px;
+  word-wrap: break-word;
+  background: #152d35;
+  color: white;
+  padding: 1rem;
+  height: fit-content;
+}
+
+.deleteBtn {
+  font-size: 1rem;
+  cursor: pointer;
+}
+
+/* .noteTextTitle {
+  background-color: #152d35;
+  color: white;
+  margin-bottom: 5px;
+  border: none;
+  resize: none;
+  font-weight: bold;
+}
+
+.noteTextNote {
+  background-color: #152d35;
+  color: white;
+  margin-bottom: 3px;
+  border: none;
+  resize: none;
+  font-weight: 100;
+} */
+
+.noteTextTitle {
+  overflow: auto;
+  background-color: #152d35;
+  color: white;
+  margin-bottom: 5px;
+  border: none;
+  resize: none;
+  font-weight: bold;
+  max-height: 75px;
+}
+
+.noteTextNote {
+  overflow: auto;
+  background-color: #152d35;
+  color: white;
+  margin-bottom: 3px;
+  border: none;
+  resize: none;
+  font-weight: 100;
+  max-height: 150px;
+}
+
+.noteText :focus {
+  outline: none !important;
+}

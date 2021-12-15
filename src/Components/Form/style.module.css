@@ -1,0 +1,41 @@
+.main {
+  margin: 2rem auto;
+}
+.form {
+  background: #152d35;
+  border-radius: 4px;
+  text-align: center;
+}
+.title {
+  background: #152d35;
+  padding: 0.5rem;
+  width: 100%;
+  height: 50px;
+  border: none;
+  font-size: 20px;
+  line-height: 24px;
+  overflow: auto;
+  outline: none;
+  color: white;
+}
+.noteInput {
+  background: #152d35;
+  width: 100%;
+  height: 150px;
+  padding: 0.5rem;
+  border: none;
+  font-size: 20px;
+  line-height: 24px;
+  overflow: auto;
+  outline: none;
+  color: white;
+  resize: none;
+}
+.submitBtn {
+  background: #d4ecdd;
+  border: none;
+  border-radius: 7px;
+  color: #152d35;
+  margin: 0.5rem;
+  padding: 0.2rem 1rem;
+}
