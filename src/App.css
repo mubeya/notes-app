@@ -1,9 +1,22 @@
 body {
-  background-color: #345b63 !important;
+  background-color: var(--dark-background) !important;
+  color: var(--dark-text) !important;
 }
 
-.header {
-  text-align: center;
-  margin: 1rem 0 1rem 0;
-  color: white;
+.theme-dark {
+  --dark-text: #ffffff;
+  --light-text: #f9f8f8;
+  --dark-background: #2f4550;
+  --light-background: #586f7c;
+  --accent: #b8dbd9;
+  --button-border: #b8dbd9;
+}
+
+.theme-light {
+  --dark-text: #5e4b56;
+  --light-text: #5e4b56;
+  --dark-background: #ffffff;
+  --light-background: #ffffff;
+  --accent: #dbe7e4;
+  --button-border: #5e4b56;
 }

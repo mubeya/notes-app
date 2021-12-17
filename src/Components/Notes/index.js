@@ -29,7 +29,7 @@ function Notes() {
     };
     setNotes(changedNewNotes);
     localStorage.setItem("notes", JSON.stringify(changedNewNotes));
-    e.target.style.backgroundColor = "#152d35"; //texti editledikten sonra arka planı eski rengine çeviriyoruz
+    // e.target.style.backgroundColor = "#var(--dark-background) !important"; //texti editledikten sonra arka planı eski rengine çeviriyoruz
   };
 
   const handleUpdateNote = (e, index) => {
@@ -43,12 +43,13 @@ function Notes() {
     };
     setNotes(changedNewNotes);
     localStorage.setItem("notes", JSON.stringify(changedNewNotes));
-    e.target.style.backgroundColor = "#152d35";
+    // e.target.style.background = `var(--dark-background) !important;`;
   };
 
-  const handleFocusNote = (e) => {
-    e.target.style.backgroundColor = "#345b6375"; //texi editlerken arka plan rengini değiştiriyoruz.
-  };
+  // const handleFocus = (e) => {
+  //   e.target.style.background = "#5d8d972a"; //texi editlerken arka plan rengini değiştiriyoruz.
+  //   e.target.style.outline = "none";
+  // };
 
   return (
     <Container>
@@ -76,7 +77,7 @@ function Notes() {
                 title='title'
                 suppressContentEditableWarning={true}
                 onBlur={(e) => handleUpdateTitle(e, arr.length - 1 - index)}
-                onFocus={(e) => handleFocusNote(e)}
+                //onFocus={(e) => handleFocus(e)}
                 defaultValue={arr[arr.length - 1 - index].title}>
                 {arr[arr.length - 1 - index].title}
               </p>
@@ -86,7 +87,7 @@ function Notes() {
                 title='note'
                 suppressContentEditableWarning={true}
                 onBlur={(e) => handleUpdateNote(e, arr.length - 1 - index)}
-                onFocus={(e) => handleFocusNote(e)}
+                // onFocus={(e) => handleFocus(e)}
                 defaultValue={arr[arr.length - 1 - index].note}>
                 {arr[arr.length - 1 - index].note}
               </p>
