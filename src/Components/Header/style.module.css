@@ -62,7 +62,7 @@
   min-height: 60px;
   position: relative;
   grid-area: toggle;
-  margin: 0 20px;
+  margin: 0 auto;
 }
 
 /* background */

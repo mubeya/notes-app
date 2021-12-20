@@ -4,9 +4,11 @@ import { useEffect } from "react";
 import Notes from "./Components/Notes";
 import Form from "./Components/Form";
 import Header from "./Components/Header";
-import { keepTheme } from "./theme";
+import { useTheme } from "././Context/ThemeContext";
 
 function App() {
+  const { keepTheme } = useTheme();
+
   useEffect(() => {
     keepTheme();
   });

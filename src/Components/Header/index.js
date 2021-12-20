@@ -1,59 +1,58 @@
-import { useEffect, useState } from "react";
+import { useEffect } from "react";
 import style from "./style.module.css";
 import { Container, Navbar, Nav } from "react-bootstrap";
-import { setTheme } from "../../theme";
+import { useTheme } from "../../Context/ThemeContext";
 
 function Header() {
-  const [togClass, setTogClass] = useState("dark");
-  let theme = localStorage.getItem("theme");
-
-  const handleOnClick = () => {
-    if (localStorage.getItem("theme") === "theme-dark") {
-      setTheme("theme-light");
-      setTogClass("light");
-    } else {
-      setTheme("theme-dark");
-      setTogClass("dark");
-    }
-  };
+  const { theme, setTheme, setDefaultTheme, togClass, setTogClass } =
+    useTheme();
 
   useEffect(() => {
+    setTheme(localStorage.getItem("theme"));
     if (localStorage.getItem("theme") === "theme-dark") {
       setTogClass("dark");
     } else if (localStorage.getItem("theme") === "theme-light") {
       setTogClass("light");
     }
-  }, [theme]);
+  }, [theme, setTogClass, setTheme]);
+
+  const handleOnClick = () => {
+    if (localStorage.getItem("theme") === "theme-dark") {
+      setDefaultTheme("theme-light");
+      setTogClass("light");
+    } else {
+      setDefaultTheme("theme-dark");
+      setTogClass("dark");
+    }
+  };
 
   return (
     <div>
       <Navbar collapseOnSelect expand='lg'>
         <Container>
-          <Navbar.Brand href='#home' className={style.header}>
+          <Navbar.Brand href='/' className={style.header}>
             Keep Note
           </Navbar.Brand>
           <Nav>
-            <Nav.Link href='#features'>
-              <div className={style.containerToggle}>
-                {togClass === "light" ? (
-                  <input
-                    type='checkbox'
-                    id='toggle'
-                    className={style.toggleCheckbox}
-                    onClick={handleOnClick}
-                    checked
-                  />
-                ) : (
-                  <input
-                    type='checkbox'
-                    id='toggle'
-                    className={style.toggleCheckbox}
-                    onClick={handleOnClick}
-                  />
-                )}
-                <label htmlFor='toggle' className={style.toggleLabel}></label>
-              </div>
-            </Nav.Link>
+            <div className={style.containerToggle}>
+              {togClass === "light" ? (
+                <input
+                  type='checkbox'
+                  id='toggle'
+                  className={style.toggleCheckbox}
+                  onClick={handleOnClick}
+                  checked
+                />
+              ) : (
+                <input
+                  type='checkbox'
+                  id='toggle'
+                  className={style.toggleCheckbox}
+                  onClick={handleOnClick}
+                />
+              )}
+              <label htmlFor='toggle' className={style.toggleLabel}></label>
+            </div>
           </Nav>
         </Container>
       </Navbar>

@@ -4,11 +4,14 @@ import "./index.css";
 import App from "./App";
 import reportWebVitals from "./reportWebVitals";
 import { NotesProvider } from "./Context/NotesContext";
+import { ThemeProvider } from "./Context/ThemeContext";
 
 ReactDOM.render(
   <React.StrictMode>
     <NotesProvider>
-      <App />
+      <ThemeProvider>
+        <App />
+      </ThemeProvider>
     </NotesProvider>
   </React.StrictMode>,
   document.getElementById("root")
